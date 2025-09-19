@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- metas -->
+    <meta charset="utf-8">
+    <meta name="author" content="Tesla Stock Market" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="keywords" content="Tesla, TSLA, Tesla Stock, Electric Vehicles, Investment, Trading, Stock Market, Elon Musk, EV Stocks, Clean Energy" />
+    <meta name="description" content="Tesla Stock Market - Your premier destination for Tesla stock investment and trading. Join thousands of investors capitalizing on the electric vehicle revolution and sustainable energy future."
+    />
+
+    <!-- title  -->
+    <title>Tesla Stock Market - Invest in the Future</title>
+
+    <!-- favicon -->
+    <link rel="shortcut icon" href="/index/img/logos/favicon.png">
+    <link rel="apple-touch-icon" href="/index/img/logos/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/index/img/logos/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/index/img/logos/apple-touch-icon-114x114.png">
+
+    <!-- plugins -->
+    <link rel="stylesheet" href="/index/css/plugins.css" />
+
+    <!-- search css -->
+    <link rel="stylesheet" href="/index/search/search.css" />
+
+    <!-- quform css -->
+    <link rel="stylesheet" href="/index/quform/css/base.css">
+
+    <!-- custom css -->
+    <link href="/index/css/styles-2.css" rel="stylesheet" id="colors">
+    
+    <!-- Custom Tesla Responsive Styles -->
+    <style>
+        /* Header positioning fix */
+        .header-style1 {
+            position: relative !important;
+            z-index: 10;
+        }
+        
+        .tesla-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1560958089-b8a1929cea89?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            min-height: calc(100vh - 80px);
+            display: flex;
+            align-items: center;
+        }
+        
+        @media (max-width: 768px) {
+            .tesla-hero {
+                background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1560958089-b8a1929cea89?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=1200&q=80');
+                background-size: cover;
+                background-position: center;
+                background-attachment: scroll;
+                min-height: 100vh;
+            }
+            
+            .tesla-content h1 {
+                font-size: 2.2em !important;
+                line-height: 1.2 !important;
+                margin: 20px 0 !important;
+            }
+            
+            .tesla-content p {
+                font-size: 1.1em !important;
+                line-height: 1.4 !important;
+                margin: 20px 0 !important;
+            }
+            
+            .stock-ticker {
+                font-size: 0.9em !important;
+                padding: 8px 16px !important;
+            }
+            
+            .cta-button {
+                font-size: 16px !important;
+                padding: 12px 24px !important;
+                margin: 15px 5px !important;
+            }
+            
+            .tesla-stats {
+                padding: 20px !important;
+                margin-top: 30px !important;
+            }
+            
+            .tesla-stats h3 {
+                font-size: 1.4em !important;
+                margin-bottom: 20px !important;
+            }
+            
+            .feature-card {
+                padding: 15px !important;
+                margin-bottom: 15px !important;
+            }
+            
+            .feature-card h4 {
+                font-size: 1.1em !important;
+            }
+            
+            .feature-card p {
+                font-size: 0.9em !important;
+            }
+            
+            .feature-icon {
+                font-size: 2.2em !important;
+            }
+        }
+        
+        .tesla-content {
+            color: #f8f9fa;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9);
+        }
+        
+        .tesla-content h1 {
+            color: #ffffff !important;
+            text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.9);
+        }
+        
+        .tesla-content p {
+            color: #e9ecef !important;
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+        }
+        
+        .tesla-stats {
+            background: rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(15px);
+            border-radius: 15px;
+            padding: 30px;
+            margin-top: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            color: #ffffff;
+        }
+        
+        .tesla-stats h3 {
+            color: #ffffff !important;
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+        }
+        
+        .stock-ticker {
+            background: rgba(0, 150, 0, 0.9);
+            color: #ffffff;
+            padding: 12px 24px;
+            border-radius: 25px;
+            display: inline-block;
+            margin: 10px 0;
+            font-weight: bold;
+            animation: pulse 2s infinite;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .cta-button {
+            background: linear-gradient(45deg, #e31837, #ff4757);
+            border: none;
+            color: #ffffff;
+            padding: 16px 32px;
+            font-size: 18px;
+            font-weight: 600;
+            border-radius: 30px;
+            margin: 20px 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 25px rgba(227, 24, 55, 0.4);
+            color: #ffffff;
+            text-decoration: none;
+            border-color: rgba(255, 255, 255, 0.4);
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .feature-card {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(12px);
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            color: #ffffff;
+            transition: all 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-5px);
+        }
+        
+        .feature-card h4 {
+            color: #ffffff !important;
+            margin: 15px 0 10px 0;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+        }
+        
+        .feature-card p {
+            color: #e9ecef !important;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+        }
+        
+        .feature-icon {
+            font-size: 3em;
+            margin-bottom: 15px;
+            color: #ff4757;
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- start page loading -->
+    <div id="preloader">
+        <div class="row loader">
+            <div class="loader-icon"></div>
+        </div>
+    </div>
+    <!-- end page loading -->
+
+    <!-- start main-wrapper section -->
+    <div class="main-wrapper">
+
+        <!-- start header section -->
+        <header class="header-style1 menu_area-light">
+            <div class="navbar-default">
+
+                <!-- start top search -->
+                <div class="top-search bg-theme">
+                    <div class="container">
+                        <form class="search-form" action="/search" method="GET" accept-charset="utf-8">
+                            <div class="input-group">
+                                <span class="input-group-addon cursor-pointer">
+                            <button class="search-form_submit fas fa-search font-size18 text-white" type="submit"></button>
+                        </span>
+                                <input type="text" class="search-form_input form-control" name="s" autocomplete="off" placeholder="Search Tesla investments...">
+                                <span class="input-group-addon close-search"><i class="fas fa-times font-size18 line-height-28 margin-5px-top"></i></span>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!-- end top search -->
+
+                <div class="container" style="background-color: black;">
+                    <div class="row align-items-center">
+                        <div class="col-12 col-lg-12">
+                            <div class="menu_area alt-font">
+                                <nav class="navbar navbar-expand-lg" style="background-color: black;">
+                                    <li><a href="/homepage"><span class="btn-style2 small theme"> INVEST NOW </span></a></li>
+                                
+                                    <div class="attr-nav sm-no-margin xs-margin-65px-right">
+                                        <span class="sm-margin-20px-right xs-margin-5px-right">
+                                        <a href="/login" class="btn-style2 small theme">
+                                            <span>LOGIN</span>
+                                        </a>
+                                        </span>
+                                    </div>
+
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </header>
+        <!-- end header section -->
+
+        <!-- start banner section-->
+        <section class="tesla-hero">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-md-10 col-sm-12">
+                        <div class="tesla-content">
+                            
+                            <!-- Tesla Stock Ticker -->
+                            <div class="stock-ticker">
+                                📈 TSLA: $248.50 (+2.4%) 
+                            </div>
+                            
+                            <!-- start banner headline text -->
+                            <h1 class="cd-headline loading-bar" style="font-size: 3.5em; margin: 30px 0;">
+                                Invest in the Future of <br />
+                                <span class="cd-words-wrapper">
+                                <b class="is-visible" style="color: #e31837;">TESLA</b>
+                                <b style="color: #e31837;">ELECTRIC VEHICLES</b>
+                                <b style="color: #e31837;">CLEAN ENERGY</b>
+                                <b style="color: #e31837;">INNOVATION</b>
+                            </span>
+                            </h1>
+                            <!-- end banner headline text -->
+                            
+                            <p style="font-size: 1.3em; margin: 30px 0; line-height: 1.6;">
+                                Join thousands of investors capitalizing on Tesla's revolutionary impact on transportation, 
+                                energy storage, and sustainable technology. Start your Tesla investment journey today.
+                            </p>
+                            
+                            <!-- Call to Action Buttons -->
+                            <div style="margin: 40px 0;">
+                                <a href="/homepage" class="cta-button">
+                                    🚀 Start Investing
+                                </a>
+                                <a href="/about" class="cta-button" style="background: linear-gradient(45deg, #333, #666);">
+                                    📊 Learn More
+                                </a>
+                            </div>
+                            
+                            <!-- Tesla Investment Features -->
+                            <div class="tesla-stats">
+                                <h3 style="text-align: center; margin-bottom: 30px; color: #e31837;">Why Invest in Tesla?</h3>
+                                <div class="feature-grid">
+                                    <div class="feature-card">
+                                        <div class="feature-icon">⚡</div>
+                                        <h4>Market Leader</h4>
+                                        <p>Leading EV manufacturer with global expansion</p>
+                                    </div>
+                                    <div class="feature-card">
+                                        <div class="feature-icon">🔋</div>
+                                        <h4>Energy Innovation</h4>
+                                        <p>Revolutionary battery and solar technology</p>
+                                    </div>
+                                    <div class="feature-card">
+                                        <div class="feature-icon">🤖</div>
+                                        <h4>AI & Autonomy</h4>
+                                        <p>Self-driving technology and robotics</p>
+                                    </div>
+                                    <div class="feature-card">
+                                        <div class="feature-icon">🌍</div>
+                                        <h4>Sustainable Future</h4>
+                                        <p>Leading the transition to clean energy</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- end banner section -->
+
+        <!-- start footer section -->
+        <div class="footer-bar xs-font-size13" style="background: rgba(0, 0, 0, 0.9); padding: 20px 0;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 text-left xs-text-center xs-margin-5px-bottom">
+                        <p style="color: white;">&copy; Copyright Tesla Stock Market 
+                            <script>
+                                document.write(new Date().getFullYear())
+                            </script>. All Rights Reserved.</p>
+                    </div>
+                    <div class="col-md-6 text-right xs-text-center">
+                        <p style="color: #ccc; font-size: 0.9em;">
+                            Invest responsibly. Past performance does not guarantee future results.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end footer section -->
+
+    </div>
+    <!-- end main-wrapper section -->
+
+    <!-- all js include start -->
+
+    <!-- jquery -->
+    <script src="/index/js/jquery.min.js"></script>
+
+    <!-- popper js -->
+    <script src="/index/js/popper.min.js"></script>
+
+    <!-- bootstrap -->
+    <script src="/index/js/bootstrap.min.js"></script>
+
+    <!-- navigation -->
+    <script src="/index/js/nav-menu.js"></script>
+
+    <!-- serch -->
+    <script src="/index/search/search.js"></script>
+
+    <!-- tab -->
+    <script src="/index/js/easy.responsive.tabs.js"></script>
+
+    <!-- owl carousel -->
+    <script src="/index/js/owl.carousel.js"></script>
+
+    <!-- jquery.counterup.min -->
+    <script src="/index/js/jquery.counterup.min.js"></script>
+
+    <!-- stellar js -->
+    <script src="/index/js/jquery.stellar.min.js"></script>
+
+    <!-- waypoints js -->
+    <script src="/index/js/waypoints.min.js"></script>
+
+    <!-- countdown js -->
+    <script src="/index/js/countdown.js"></script>
+
+    <!-- jquery.magnific-popup js -->
+    <script src="/index/js/jquery.magnific-popup.min.js"></script>
+
+    <!-- isotope.pkgd.min js -->
+    <script src="/index/js/isotope.pkgd.min.js"></script>
+
+    <!--  chart js -->
+    <script src="/index/js/chart.min.js"></script>
+
+    <!-- thumbs js -->
+    <script src="/index/js/owl.carousel.thumbs.js"></script>
+
+    <!-- animated js -->
+    <script src="/index/js/animated-headline.js"></script>
+
+    <!--  clipboard js -->
+    <script src="/index/js/clipboard.min.js"></script>
+
+    <!--  prism js -->
+    <script src="/index/js/prism.js"></script>
+    <script src="/index/js/main.js"></script>
+    <script src="/index/quform/js/plugins.js"></script>
+    <script src="/index/quform/js/scripts.js"></script>
+    
+    <!-- Custom Tesla Stock Ticker Animation -->
+    <script>
+        // Simulate real-time stock price updates
+        function updateStockPrice() {
+            const ticker = document.querySelector('.stock-ticker');
+            const basePrice = 248.50;
+            const variation = (Math.random() - 0.5) * 10;
+            const newPrice = (basePrice + variation).toFixed(2);
+            const change = variation.toFixed(2);
+            const changePercent = (variation / basePrice * 100).toFixed(2);
+            
+            const isPositive = variation >= 0;
+            ticker.style.background = isPositive ? 'rgba(0, 150, 0, 0.8)' : 'rgba(220, 20, 60, 0.8)';
+            ticker.innerHTML = `📈 TSLA: $${newPrice} (${isPositive ? '+' : ''}${changePercent}%)`;
+        }
+        
+        // Update every 5 seconds
+        setInterval(updateStockPrice, 5000);
+    </script>
+</body>
+</html>
