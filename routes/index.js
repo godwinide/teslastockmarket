@@ -11,7 +11,7 @@ router.get('/', (req, res) => {
 
 router.get('/homepage', (req, res) => {
     try {
-        res.render('homepage');
+        res.render('index', {layout: false});
     } catch (error) {
         console.error(error);
         res.status(500).send('Server Error');
