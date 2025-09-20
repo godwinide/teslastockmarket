@@ -21,8 +21,22 @@
                                 <i class="fa fa-dollar-sign"></i>
                             </span>
                             <div>
-                                <h5 class="mb-1 text-light"><b><%= user.currency %><%= user.balance.toLocaleString() %></b></h5>
+                                <h5 class="mb-1 text-light"><b><%= user.currency %> <%= user.balance.toLocaleString() %></b></h5>
                                 <small class="text-muted">Account Balance</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-3">
+                    <div class="p-3 card bg-dark shadow">
+                        <div class="d-flex align-items-center">
+                            <span class="mr-3 stamp stamp-md bg-warning">
+                                <i class="fa fa-download"></i>
+                            </span>
+                            <div>
+                                <h5 class="mb-1 text-light"><%= user.currency %> <%= user.totalDeposit.toLocaleString() %></h5>
+
+                                <small class="text-muted text-light">Total Deposit</small>
                             </div>
                         </div>
                     </div>
@@ -34,7 +48,7 @@
                                 <i class="fa fa-coins"></i>
                             </span>
                             <div>
-                                <h5 class="mb-1 text-light"><b><%= user.currency %><%= user.totalProfit.toLocaleString() %></b></h5>
+                                <h5 class="mb-1 text-light"><b><%= user.currency %> <%= user.totalProfit.toLocaleString() %></b></h5>
                                 <small class="text-muted text-light">Total Profit</small>
                             </div>
                         </div>
@@ -47,7 +61,7 @@
                                 <i class="fa fa-gift"></i>
                             </span>
                             <div>
-                                <h5 class="mb-1 text-light"><b><%= user.currency %><%= user.totalBonus.toLocaleString() %></b></h5>
+                                <h5 class="mb-1 text-light"><b><%= user.currency %> <%= user.totalBonus.toLocaleString() %></b></h5>
                                 <small class="text-muted text-light">Total Bonus</small>
                             </div>
                         </div>
@@ -60,7 +74,7 @@
                                 <i class="fa fa-retweet"></i>
                             </span>
                             <div>
-                                <h5 class="mb-1 text-light"><b><%= user.currency %><%= user.totalReferralBonus.toLocaleString() %></b></h5>
+                                <h5 class="mb-1 text-light"><b><%= user.currency %> <%= user.totalReferralBonus.toLocaleString() %></b></h5>
                                 <small class="text-muted text-light">Total Referral Bonus</small>
                             </div>
                         </div>
@@ -95,25 +109,11 @@
                 <div class="col-sm-6 col-lg-3">
                     <div class="p-3 card bg-dark shadow">
                         <div class="d-flex align-items-center">
-                            <span class="mr-3 stamp stamp-md bg-warning">
-                                <i class="fa fa-download"></i>
-                            </span>
-                            <div>
-                                <h5 class="mb-1 text-light"><%= user.currency %><%= user.totalDeposit.toLocaleString() %></h5>
-
-                                <small class="text-muted text-light">Total Deposit</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-lg-3">
-                    <div class="p-3 card bg-dark shadow">
-                        <div class="d-flex align-items-center">
                             <span class="mr-3 stamp stamp-md bg-danger">
                                 <i class="fa fa-arrow-alt-circle-up"></i>
                             </span>
                             <div>
-                                <h5 class="mb-1 text-light"><%= user.currency %><%= user.totalWithdrawals.toLocaleString() %></h5>
+                                <h5 class="mb-1 text-light"><%= user.currency %> <%= user.totalWithdrawals.toLocaleString() %></h5>
 
                                 <small class="text-muted text-light">Total Withdrawals</small>
                             </div>
